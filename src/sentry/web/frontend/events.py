@@ -94,7 +94,7 @@ def replay_event(request, project_id, event_id):
         result = Replayer(
             url=form.cleaned_data['url'],
             method=form.cleaned_data['method'],
-            data=form.cleaned_data['data'],
+            data=form.cleaned_data['data'] or None,
             headers=form.cleaned_data['headers'],
         ).replay()
     else:
